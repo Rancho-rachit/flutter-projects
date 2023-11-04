@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
       db.toDoList[index][1] = !db.toDoList[index][1];
       if (db.toDoList[index][1] == false) {}
     });
+    db.updateDataBase();
   }
 
   // save new task
@@ -45,6 +46,7 @@ class _HomePageState extends State<HomePage> {
       _controller.clear();
     });
     Navigator.of(context).pop();
+    db.updateDataBase();
   }
 
   //create new task
@@ -66,6 +68,7 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       db.toDoList.removeAt(index);
     });
+    db.updateDataBase();
   }
 
   @override
